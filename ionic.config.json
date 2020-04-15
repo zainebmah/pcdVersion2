@@ -1,0 +1,7 @@
+{
+  "name": "pcdMOB",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
