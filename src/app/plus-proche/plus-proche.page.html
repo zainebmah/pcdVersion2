@@ -3,10 +3,102 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>plusProche</ion-title>
+    <ion-label>Sites à proximité </ion-label>
   </ion-toolbar>
-</ion-header>
+  
+    
+      
+    
+    <ion-list>
+      
+    
+     
+    
+      <ion-item>
+        <ion-icon name="location"></ion-icon>
+        <ion-label>Ta région</ion-label> 
+        
+        <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+          <ion-select-option value=" Position">Grand Tunis,Tunisie </ion-select-option> 
+          <ion-select-option value="sousse">Sousse,Tunisie</ion-select-option>
+          <ion-select-option value="hammamet">Hammamet,Tunisie</ion-select-option>
+          <ion-select-option value="sfax">Sfax,Tunisie</ion-select-option>
+          <ion-select-option value="beja">BéjA,Tunisie</ion-select-option>
+          <ion-select-option value="toutes">Toutes les régions</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+      
+    
+    </ion-list>
+  </ion-header>
+ 
 
-<ion-content>
+    <ion-content>
+     
+     
+   
+        
+      
+      <ion-button color="success" (click)="presentAlert()">
+        A proximité de moi
+      </ion-button>
 
-</ion-content>
+Musée National du Bardo
+Musée archéologique de Sousse
+Musée archéologique d’El Jem
+Musée de Carthage
+Musée de Kerkouane
+Musée de Chemtou
+Musée archéologique de Nabeul
+Musée Paléochretien Carthage
+Musée de Lamta
+Musée national d’art islamique de Raqqâda
+Musée de Mahdia
+Musée de Douz
+Musée ATP Tunis (Dar Ben Abdallah)
+Musée d’Enfidha
+Musée Sidi Zitouni de Djerba
+Musée Sidi Amor Abada (Kairouan)
+Musée archéologique de Sfax
+Musée de Zarzis
+Musée de Gabès
+Musée de Salacta
+Musée du Kef
+Musée des arts et traditions populaires Monastir
+Musée de Gafsa
+Musée ATP Sfax (Dar Jallouli)
+Musée de Moknine
+
+
+      
+        
+         
+     
+
+
+
+
+    </ion-content>
+
+    
+    
+
+  
+    
+       
+  
+
+
+
+          
+
+
+
+
+  
+
+   
+ 
+
+  

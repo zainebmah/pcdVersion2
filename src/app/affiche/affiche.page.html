@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/scan"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Le monument scanné</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+
+
+<ion-content id="produtos" [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>     Monument reconnu 
+        <ion-icon name="checkbox"></ion-icon>
+         </ion-card-subtitle>
+     
+      <img src="./assets/122.jpg" />
+      <ion-card-title>Titre de monument</ion-card-title>
+
+    </ion-card-header>
+  
+    <ion-card-content>
+      Description
+      jkjklfjdlkfjkldj
+      dfjkdfkdfjkdfl
+      fjkdnfkdlfnd
+      fnjdnfkdjnf
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button >Evaluer le monument</ion-button><br>
+
+  <ion-col size="8">
+    <ion-icon name="star" color="warning" *ngFor="let c of [1,2,3,4,5]"></ion-icon>
+  </ion-col>
+
+  <ion-button >Ajouter aux favoris</ion-button><br>
+
+  <ion-item-divider color="light">
+    <h2>les images similaires</h2>
+    <span slot="end" class="ion-margin"><small>{{similaires?.length}} similaires</small>
+      <ion-icon name="arrow-forward"></ion-icon>
+    </span>
+  </ion-item-divider>
+  <br />
+  <div class="scroll-horizontal">
+    <ion-card *ngFor="let i of similaires" id="doces">
+      <ion-img [src]="i.imagemUrl" style="width: 100%;height: 130px;"> </ion-img>
+      <ion-card-content>
+        <ion-item>
+          <h2>{{ i.nome }}</h2>
+          <p>{{ i.descricao }}</p>
+        </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="8">
+              <ion-icon name="star" color="warning" *ngFor="let c of [1,2,3,4,5]"></ion-icon>
+            </ion-col>
+            </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+  
+
+  
+  <ion-button >Ajouter aux favoris</ion-button><br>
+
+
+
+
+
+
+</ion-content>

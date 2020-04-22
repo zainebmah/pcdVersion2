@@ -46,7 +46,11 @@ const routes: Routes = [
   {
     path: 'plus-proche',
     loadChildren: () => import('./plus-proche/plus-proche.module').then( m => m.PlusProchePageModule)
-  }
+  },
+  {
+  path: 'affiche',
+    loadChildren: () => import('./affiche/affiche.module').then( m => m.AffichePageModule)}
+
 ];
 
 @NgModule({
