@@ -6,8 +6,13 @@
     <ion-title>carte géographique de la tunisie</ion-title>
   </ion-toolbar>
   <ion-toolbar>
-    <ion-searchbar placeholder="taper le nom du site pour voir ses monuments"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" placeholder="taper le nom du site pour voir ses monuments"></ion-searchbar>
   </ion-toolbar>
+  <ion-list>
+    <ion-item *ngFor="let item of sites">
+      {{ item.titre }}
+    </ion-item>
+  </ion-list>
 </ion-header>
 
 <ion-content>
