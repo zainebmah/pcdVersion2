@@ -1,24 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { ActivatedRoute } from '@angular/router';
-
-=======
 import { Camera, CameraOptions } from '@ionic-native/Camera/ngx';
 import { Crop } from '@ionic-native/crop/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { ActionSheetController } from '@ionic/angular';
->>>>>>> 202f020cce45612488d70bd3ded74e8f0c1cf477
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-scan',
   templateUrl: './scan.page.html',
   styleUrls: ['./scan.page.scss'],
 })
 export class ScanPage implements OnInit {
-  public scan: string;
 
-<<<<<<< HEAD
-  constructor(private activatedRoute: ActivatedRoute) { }
-=======
   croppedImagepath = "";
   isLoading = false;
 
@@ -26,16 +18,15 @@ export class ScanPage implements OnInit {
     maximumImagesCount: 1,
     quality: 50
   };
->>>>>>> 202f020cce45612488d70bd3ded74e8f0c1cf477
-
+  serverData: JSON;
   constructor(
     private camera: Camera,
     private crop: Crop,
     public actionSheetController: ActionSheetController,
-    private file: File
+    private file: File,
+    private httpClient: HttpClient
   ) { }
   ngOnInit() {
-   
   }
 
   pickImage(sourceType) {
@@ -107,4 +98,11 @@ export class ScanPage implements OnInit {
       this.isLoading = false;
     });
   }
+  getImages() {
+    this.httpClient.get<any>(API).subscribe(data => {
+      this.serverData = data as JSON;
+      console.log(this.serverData);
+    })
+  }
 }
+const API = 'http://127.0.0.1:5002/images';

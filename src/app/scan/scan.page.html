@@ -7,16 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<<<<<<< HEAD
 
 
-  <ion-button [routerLink]="['/affiche']">Scanner</ion-button><br>
 
-=======
   <ion-content padding text-center>
  
-    <ion-button (click)="selectImage()">
+    <ion-button (click)="getImages()">
       choisir votre image pour repositionner
     </ion-button>
    
@@ -29,7 +25,6 @@
     <ion-button (click)="selectLang()">
       choisir la langue désirée pour la description
     </ion-button>
-   
-  </ion-content>
->>>>>>> 202f020cce45612488d70bd3ded74e8f0c1cf477
+    <ion-button [routerLink]="['/affiche']">Scanner</ion-button><br>
+  
 </ion-content>
