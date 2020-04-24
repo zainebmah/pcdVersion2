@@ -98,6 +98,26 @@ export class ScanPage implements OnInit {
       this.isLoading = false;
     });
   }
+  async selectLang() {
+    const actionSheet = await this.actionSheetController.create({
+      header: "choisir langue",
+      buttons: [{
+        text: 'Arabe'
+      },
+      {
+        text: 'Français'
+      },
+      {
+        text: 'Anglais'
+      },
+      {
+        text: 'Annuler',
+        role: 'cancel'
+      }
+      ]
+    });
+    await actionSheet.present();
+  }
   getImages() {
     this.httpClient.get<any>(API).subscribe(data => {
       this.serverData = data as JSON;

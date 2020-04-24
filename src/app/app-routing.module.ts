@@ -49,7 +49,16 @@ const routes: Routes = [
   },
   {
   path: 'affiche',
-    loadChildren: () => import('./affiche/affiche.module').then( m => m.AffichePageModule)}
+    loadChildren: () => import('./affiche/affiche.module').then( m => m.AffichePageModule)},
+  {
+    path: 'site/:id',
+    loadChildren: () => import('./site/site.module').then( m => m.SitePageModule)
+  },
+  {
+    path: 'monuments/:id',
+    loadChildren: () => import('./monuments/monuments.module').then( m => m.MonumentsPageModule)
+  }
+
 
 ];
 

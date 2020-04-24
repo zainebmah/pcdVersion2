@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot ="start">
+     <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>site</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card no-margin>
+            
+    <img src="(siteDetail | async).image"/>
+    <ion-card-header>
+      <ion-card-subtitle><div align="center"><ion-icon name="globe" slot="start"></ion-icon> Adresse </div></ion-card-subtitle>
+      <ion-card-title ><div align="center">{{ (siteDetail | async).adresse }}</div></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div align="center">{{ (siteDetail | async).description }}</div>
+      <br>
+      <div align="center"><ion-button slot="end" fill="outline" [routerLink]="['/monuments', (siteDetail | async).id]">Voir les monuments</ion-button></div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>Surface / m carré</ion-label>
+        <ion-chip color="primary">{{ (siteDetail | async).surface }}</ion-chip>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nombre de visiteurs / an</ion-label>
+        <ion-chip color="primary">{{ (siteDetail | async).nbreVisiteurs }}</ion-chip>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date d'ouverture</ion-label>
+        <ion-chip color="primary">{{ (siteDetail | async).dateOuverture }}</ion-chip>
+      </ion-item>
+    </ion-list>
+  </ion-card><br>
+  <div id="container" align="center"><ion-button>ajouter à mes sites favoris</ion-button></div>
+</ion-content>

@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>monuments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let monument of monuments">
+    <ion-img [src]="image"></ion-img>
+      <ion-card-header>
+        <ion-card-title> {{ monument.titre }}</ion-card-title>
+      </ion-card-header>
+  </ion-card>
+</ion-content>

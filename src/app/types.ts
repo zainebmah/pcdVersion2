@@ -1,25 +1,26 @@
 export interface Site {
-    id: number;
-    titre: string;
-    gouvernorat: string;
-    adresse: string;
-    monuments: Monument[];
-    surface: number;
-    dateOuverture: string;
-    nbreVisiteurs: number;
-    users: User[];
+  id: number;
+  titre: string;
+  description: Text;
+  image: string;
+  gouvernorat: string;
+  adresse: string;
+  monuments: Monument[];
+  surface: number;
+  dateOuverture: string;
+  nbreVisiteurs: number;
+  users: User[];
   }
 export interface Monument {
-    id: number;
-    titre: string;
-    image: string;
-    descAng: string;
-    descFr: string;
-    descAr: string;
-    sites: Site[];
+  idM: number;
+  titre: string;
+  descAng: string;
+  descFr: string;
+  descAr: string;
+  sites: Site[];
   }
 export interface User {
-  id: number;
+  userId: number;
   nom: string;
   prenom: string;
   email: string;
@@ -30,10 +31,14 @@ export interface User {
   admin?: Admin;
   }
 export interface Admin {
-    id: number;
-    nom: string;
-    prenom: string;
-    mail: string;
-    mdp: string;
-    users: User[];
-  }
+  adminId: number;
+  nom: string;
+  prenom: string;
+  mail: string;
+  mdp: string;
+  users: User[];
+}
+export interface Image {
+  imageId: number;
+  titre: string;
+}
