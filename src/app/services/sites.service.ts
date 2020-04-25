@@ -13,10 +13,10 @@ export class SitesService {
     headers.append('content-type', 'application/json');
     return this.httpclient.get<any>(this.getAPI);
   }
-  getSite(siteId: String): Observable<Site> {
+  getSite(siteId: String) {
     const headers = new Headers();
     headers.append('content-type', 'application/json');
-    return this.httpclient.get<Site>(this.getAPI +"/" + siteId);
+    return this.httpclient.get<any>(this.getAPI +"/" + siteId);
   }
   getMonuments(siteId: String) {
     return this.httpclient.get<any>(getMon +"/" + siteId);

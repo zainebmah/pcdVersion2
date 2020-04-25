@@ -10,30 +10,30 @@
 <ion-content>
   <ion-card no-margin>
             
-    <img src="(siteDetail | async).image"/>
+    <img src="siteDetail.image"/>
     <ion-card-header>
       <ion-card-subtitle><div align="center"><ion-icon name="globe" slot="start"></ion-icon> Adresse </div></ion-card-subtitle>
-      <ion-card-title ><div align="center">{{ (siteDetail | async).adresse }}</div></ion-card-title>
+      <ion-card-title ><div align="center">{{ siteDetail.adresse }}</div></ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <div align="center">{{ (siteDetail | async).description }}</div>
+      <div align="center">{{ siteDetail.description }}</div>
       <br>
-      <div align="center"><ion-button slot="end" fill="outline" [routerLink]="['/monuments', (siteDetail | async).id]">Voir les monuments</ion-button></div>
+      <div align="center"><ion-button slot="end" fill="outline" [routerLink]="['/monuments', siteDetail.id]">Voir les monuments</ion-button></div>
     </ion-card-content>
   </ion-card>
   <ion-card>
     <ion-list lines="none">
       <ion-item>
         <ion-label>Surface / m carré</ion-label>
-        <ion-chip color="primary">{{ (siteDetail | async).surface }}</ion-chip>
+        <ion-chip color="primary">{{ siteDetail.surface }}</ion-chip>
       </ion-item>
       <ion-item>
         <ion-label>Nombre de visiteurs / an</ion-label>
-        <ion-chip color="primary">{{ (siteDetail | async).nbreVisiteurs }}</ion-chip>
+        <ion-chip color="primary">{{ siteDetail.nbreVisiteurs }}</ion-chip>
       </ion-item>
       <ion-item>
         <ion-label>Date d'ouverture</ion-label>
-        <ion-chip color="primary">{{ (siteDetail | async).dateOuverture }}</ion-chip>
+        <ion-chip color="primary">{{ siteDetail.dateOuverture }}</ion-chip>
       </ion-item>
     </ion-list>
   </ion-card><br>

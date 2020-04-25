@@ -7,6 +7,7 @@ import { SitesService } from '../services/sites.service';
 })
 export class MapPage implements OnInit {
   public searchTerm="";
+  public search: Boolean;
   sites = [];
   
   constructor(private siteService : SitesService) {
@@ -31,5 +32,8 @@ export class MapPage implements OnInit {
   
   setFilteredItems() {
     this.sites = this.filterItems(this.searchTerm);
+  }
+  setSearch() {
+    this.search=true;
   }
 }

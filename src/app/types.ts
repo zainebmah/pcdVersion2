@@ -1,8 +1,6 @@
 export interface Site {
   id: number;
   titre: string;
-  description: Text;
-  image: string;
   gouvernorat: string;
   adresse: string;
   monuments: Monument[];
@@ -10,6 +8,8 @@ export interface Site {
   dateOuverture: string;
   nbreVisiteurs: number;
   users: User[];
+  description: string;
+  image: string;
   }
 export interface Monument {
   idM: number;
@@ -20,7 +20,7 @@ export interface Monument {
   sites: Site[];
   }
 export interface User {
-  userId: number;
+  id: number;
   nom: string;
   prenom: string;
   email: string;
@@ -31,7 +31,7 @@ export interface User {
   admin?: Admin;
   }
 export interface Admin {
-  adminId: number;
+  id: number;
   nom: string;
   prenom: string;
   mail: string;
