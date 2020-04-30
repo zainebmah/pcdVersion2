@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Gérer votre compte',
-      url: '/gerer',
+      url: '/gerer/:1',
       icon: 'build'
     },
     {

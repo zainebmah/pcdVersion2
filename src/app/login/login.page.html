@@ -3,7 +3,50 @@
     <ion-title>login</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content >
+  <div class="padding">
+    
+    <div class="logo">
+      <ion-icon color="light" name="sunny"></ion-icon>
+ 
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" >
+    <ion-item >
+      <ion-label color="light">Email</ion-label>
+      <ion-input color="light" type="mail" placeholder="Adresse email" formControlName="mail"></ion-input>
+    </ion-item>
 
-<ion-content>
+    <ion-item>
+      <ion-label color="light">Mot de passe</ion-label>
+      <ion-input color="light" type="password" placeholder="Mot de passe"formControlName="mdp"></ion-input>
+    </ion-item>
 
+    <ion-item lines="none">
+      <ion-button type="submit" color="light" slot="end" fill="clear" [disabled]="loginForm.invalid" >Mot de passe oublié ?</ion-button>
+    </ion-item>
+  </form>
+    <ion-button color="light" expand="block" shape="round" fill="outline"(click)="login()">Connexion</ion-button>
+    <br>
+    <ion-button color="tertiary" expand="block" shape="round" [routerLink]="['/register']">Inscription</ion-button>
+
+    <ion-item lines="none">
+      <ion-label color="light" text-center>Ou connectez-vous avec</ion-label>
+    </ion-item>
+   <div  justify-content="space-between;">
+      <ion-button color="facebook" shape="round" (click)="doFbLogin()">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        Se connecter avec Facebook
+      </ion-button>
+    </div>
+      <div  justify-content="space-between;">
+    
+      <ion-button color="google" color="youtube" shape="round" (click)="doGoogleLogin()">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+        Google
+      </ion-button>
+    </div>
+    
+
+
+  </div>
 </ion-content>

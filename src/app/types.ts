@@ -11,19 +11,20 @@ export interface Site {
   description: string;
   image: string;
   }
-export interface Monument {
-  idM: number;
+export class Monument {
+  id: number;
   titre: string;
+  image: string;
   descAng: string;
   descFr: string;
   descAr: string;
   sites: Site[];
   }
-export interface User {
+export class User {
   id: number;
   nom: string;
   prenom: string;
-  email: string;
+  mail: string;
   mdp: string;
   dateInscrip: string;
   nationalite: string;

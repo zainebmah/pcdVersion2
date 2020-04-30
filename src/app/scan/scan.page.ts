@@ -18,7 +18,8 @@ export class ScanPage implements OnInit {
     maximumImagesCount: 1,
     quality: 50
   };
-  serverData: JSON;
+  serverData: any;
+  server: JSON;
   constructor(
     private camera: Camera,
     private crop: Crop,
@@ -119,9 +120,9 @@ export class ScanPage implements OnInit {
     await actionSheet.present();
   }
   getImages() {
-    this.httpClient.get<any>(API).subscribe(data => {
-      this.serverData = data as JSON;
-      console.log(this.serverData);
+    this.serverData="1222.png"
+    this.httpClient.post<any>(API,this.serverData).subscribe(data => {
+      console.log(data);
     })
   }
 }

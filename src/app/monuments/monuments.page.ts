@@ -9,14 +9,21 @@ import { Monument } from '../types';
 })
 export class MonumentsPage implements OnInit {
 
-  monuments : Monument[];
+  monuments = [];
   image : string;
   constructor(
     private siteService : SitesService,
     private activatedRoute : ActivatedRoute
   ) { 
     let MONID = this.activatedRoute.snapshot.paramMap.get('id');
+    this.siteService.getMonuments(MONID).subscribe(
+      res => {
+        this.monuments = res;        
+      },
+      err => console.log(err)
+
     
+    )
   }
 
   ngOnInit() {

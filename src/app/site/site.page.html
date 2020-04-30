@@ -9,8 +9,7 @@
 
 <ion-content>
   <ion-card no-margin>
-            
-    <img src="siteDetail.image"/>
+    <img src= "{{siteDetail.image}}" />       
     <ion-card-header>
       <ion-card-subtitle><div align="center"><ion-icon name="globe" slot="start"></ion-icon> Adresse </div></ion-card-subtitle>
       <ion-card-title ><div align="center">{{ siteDetail.adresse }}</div></ion-card-title>
@@ -18,7 +17,7 @@
     <ion-card-content>
       <div align="center">{{ siteDetail.description }}</div>
       <br>
-      <div align="center"><ion-button slot="end" fill="outline" [routerLink]="['/monuments', siteDetail.id]">Voir les monuments</ion-button></div>
+      <div align="center"><ion-button slot="end" fill="outline" [routerLink]="['/monuments', id ]" >Voir les monuments</ion-button></div>
     </ion-card-content>
   </ion-card>
   <ion-card>
@@ -37,5 +36,6 @@
       </ion-item>
     </ion-list>
   </ion-card><br>
-  <div id="container" align="center"><ion-button>ajouter à mes sites favoris</ion-button></div>
+  <div id="container" align="center" (click)="ajout()"><ion-button>ajouter à mes sites favoris</ion-button></div><br>
+  <p align="center" *ngIf="ajoute">ajouté avec succès</p>
 </ion-content>

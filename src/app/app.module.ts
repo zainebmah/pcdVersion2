@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { Crop } from '@ionic-native/crop/ngx';
 import { File } from '@ionic-native/file/ngx';
 import { Camera } from '@ionic-native/Camera/ngx';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+//import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -17,13 +20,17 @@ import { Camera } from '@ionic-native/Camera/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+    //BrowserModule,
+    //SocialLoginModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Crop , File , Camera
+    Crop , File , Camera,
   ],
   bootstrap: [AppComponent]
 })

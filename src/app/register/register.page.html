@@ -1,9 +1,80 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content >
+  <div class="padding">
+    
+    <div class="logo">
+      <ion-icon color="light" name="sunny"></ion-icon>
+     
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="register()" >
+    <ion-item >
+      <ion-label color="light">Nom</ion-label>
+      <ion-input color="light"  required
+      formControlName="nom" type="text" placeholder="nom" name="nom"></ion-input>
+    </ion-item>
+    <ion-item >
+      <ion-label color="light">Prénom</ion-label>
+      <ion-input  required
+      formControlName="prenom" color="light" type="text" placeholder="Prénom"></ion-input>
+    </ion-item>
+    <ion-item >
+        <ion-label color="light">Nationalité</ion-label>
+        <ion-select required value="Tunisienne" formControlName="nationalite" color="light" cancelText="Annuler">
+          <ion-select-option value="Tunisienne">Tunisienne</ion-select-option>
+          <ion-select-option value="Française">Française</ion-select-option>
+          <ion-select-option value="Allemande">Allemande</ion-select-option>
+          <ion-select-option value="Néerlandaise">Néerlandaise</ion-select-option>
+          <ion-select-option value="Danoise">Danoise</ion-select-option>
+          <ion-select-option value="Suédoise">Suédoise</ion-select-option>
+          <ion-select-option value="Finlandaise">Finlandaise</ion-select-option>
+          <ion-select-option value="Britanique">Britanique</ion-select-option>
+          <ion-select-option value="Italienne">Italienne</ion-select-option>
+          <ion-select-option value="Islandaise">Islandaise</ion-select-option>
+          <ion-select-option value="Polonaise">Polonaise</ion-select-option>
+          <ion-select-option value="Russe">Russe</ion-select-option>
+          <ion-select-option value="Tchèque">Tchèque</ion-select-option>
+          <ion-select-option value="Cubaine">Cubaine</ion-select-option>
+          <ion-select-option value="Américaine">Américaine</ion-select-option>
+          <ion-select-option value="Canadienne">Canadienne</ion-select-option>
+          <ion-select-option value="Grecque">Grecque</ion-select-option>
+          <ion-select-option value="Turque">Turque</ion-select-option>
+          <ion-select-option value="Belge">Belge</ion-select-option>
+          <ion-select-option value="Suisse">Suisse</ion-select-option>
+          <ion-select-option value="Serbe">Serbe</ion-select-option>
+          <ion-select-option value="Mexicaine">Mexicaine</ion-select-option>
+          <ion-select-option value="Brésilienne">Brésilienne</ion-select-option>
+          <ion-select-option value="Afghanne">Afghanne</ion-select-option>
+          <ion-select-option value="Algérienne">Algérienne</ion-select-option>
+          <ion-select-option value="Sud-africainne">Sud-africainne</ion-select-option>
+          <ion-select-option value="Anglaise">Anglaise</ion-select-option>
+          <ion-select-option value="Angolaise">Angolaise</ion-select-option>
+          <ion-select-option value="Saoudienne">Saoudienne</ion-select-option>
+          <ion-select-option value="Australienne">Australienne</ion-select-option>
+        </ion-select>
+      </ion-item>
+    <ion-item >
+      <ion-label color="light">Email</ion-label>
+      <ion-input color="light"  required
+      formControlName="mail" type="email" placeholder="mail"></ion-input>
+    </ion-item>
 
-<ion-content>
+    <ion-item>
+      <ion-label color="light">Mot de passe</ion-label>
+      <ion-input  required
+      formControlName="mdp" color="light" type="password" placeholder="Mot de passe"></ion-input>
+    </ion-item><ion-item>
+      <ion-label color="light"> Confirmez votre mot de passe</ion-label>
+      <ion-input required color="light" type="password" placeholder="Mot de passe" formControlName="remdp"></ion-input>
+    </ion-item>
 
+  
+
+    <ion-button type="submit" default-button [disabled]="!registerForm.valid || remdp.value != mdp.value" color="light" expand="block" shape="round" fill="outline">Enregistrer</ion-button>
+</form>
+
+  </div>
 </ion-content>

@@ -7,10 +7,10 @@ import { Observable } from 'rxjs' ;
 })
 export class SitesService {
   getAPI="http://127.0.0.1:8000/readSite";
+  getMon="http://127.0.0.1:8000/monSite/";
   constructor(private httpclient : HttpClient) { }
   getSites() {
-    const headers = new Headers();
-    headers.append('content-type', 'application/json');
+  
     return this.httpclient.get<any>(this.getAPI);
   }
   getSite(siteId: String) {
@@ -19,10 +19,9 @@ export class SitesService {
     return this.httpclient.get<any>(this.getAPI +"/" + siteId);
   }
   getMonuments(siteId: String) {
-    return this.httpclient.get<any>(getMon +"/" + siteId);
+    return this.httpclient.get<any>(this.getMon + siteId);
   }
   
 }
 
 
-const getMon="http://127.0.0.1:8000/monSite/";

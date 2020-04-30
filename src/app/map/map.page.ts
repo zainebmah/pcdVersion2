@@ -33,7 +33,4 @@ export class MapPage implements OnInit {
   setFilteredItems() {
     this.sites = this.filterItems(this.searchTerm);
   }
-  setSearch() {
-    this.search=true;
-  }
 }

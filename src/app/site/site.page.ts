@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs' ;
-import { Site } from '../types';
 import { SitesService } from '../services/sites.service';
+import { UserService } from '../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 @Component({
@@ -11,9 +10,11 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class SitePage implements OnInit {
   siteDetail : any;
+  ajoute = false;
   constructor(
     private siteService : SitesService,
-    private activatedRoute : ActivatedRoute
+    private activatedRoute : ActivatedRoute,
+    private userService : UserService
   ) { 
     let SITEID = this.activatedRoute.snapshot.paramMap.get('id');
     this.siteDetail=this.siteService.getSite(SITEID);

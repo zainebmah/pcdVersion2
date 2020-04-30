@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot ="start">
+      <ion-back-button></ion-back-button>
+     </ion-buttons>
     <ion-title>monuments</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card *ngFor="let monument of monuments">
-    <ion-img [src]="image"></ion-img>
+    <img src= "{{monument.image}}" /> 
       <ion-card-header>
         <ion-card-title> {{ monument.titre }}</ion-card-title>
       </ion-card-header>
