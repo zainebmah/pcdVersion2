@@ -1,22 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>You have to sign in</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
+      <ion-title size="large"></ion-title>
     </ion-toolbar>
   </ion-header>
-
+<div align="center"><p>Vous devez se connecter pour découvrir le patrimoine tunisien</p></div>
   <div id="container" align="center"> 
       <ion-button [routerLink]="['/login']">Login</ion-button><br>
       <ion-button [routerLink]="['/register']">Register</ion-button><br>
-      <ion-button [routerLink]="['/home']">home</ion-button><br>
   </div>
 </ion-content>

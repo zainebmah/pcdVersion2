@@ -11,6 +11,7 @@ export class MonumentsPage implements OnInit {
 
   monuments = [];
   image : string;
+  titre : string;
   constructor(
     private siteService : SitesService,
     private activatedRoute : ActivatedRoute
@@ -18,7 +19,8 @@ export class MonumentsPage implements OnInit {
     let MONID = this.activatedRoute.snapshot.paramMap.get('id');
     this.siteService.getMonuments(MONID).subscribe(
       res => {
-        this.monuments = res;        
+        this.monuments = res; 
+        console.log(this.monuments) ;    
       },
       err => console.log(err)
 

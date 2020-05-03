@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-
+import { JwtHelperService } from "@auth0/angular-jwt";
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -11,46 +11,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 })
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
-  public appPages = [
-    {
-      title: 'Accueil',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'Gérer votre compte',
-      url: '/gerer/:1',
-      icon: 'build'
-    },
-    {
-      title: 'Consulter vos monuments favoris',
-      url: '/favoris',
-      icon: 'heart'
-    },
-    {
-      title: 'Consulter les sites',
-      url: '/map',
-      icon: 'map'
-    },
-    {
-      title: 'Scanner ou importer une image',
-      url: '/scan',
-      icon: 'image'
-    },
-    {
-      title: 'sites à proximité',
-      url: '/plus-proche',
-      icon: 'compass'
-    }
-  ];
-
+  public appPages = [];
+  public userId : string
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
   ) {
     this.initializeApp();
+    
   }
+
 
   initializeApp() {
     this.platform.ready().then(() => {

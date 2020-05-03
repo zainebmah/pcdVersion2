@@ -1,15 +1,14 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot ="start">
+     <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content >
   <div class="padding">
     
-    <div class="logo">
-      <ion-icon color="light" name="sunny"></ion-icon>
-     
-    </div>
     <form [formGroup]="registerForm" (ngSubmit)="register()" >
     <ion-item >
       <ion-label color="light">Nom</ion-label>

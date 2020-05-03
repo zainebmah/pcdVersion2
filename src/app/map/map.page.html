@@ -8,13 +8,9 @@
   <ion-toolbar>
     <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" placeholder="taper le nom du site pour voir ses monuments"></ion-searchbar>
   </ion-toolbar>
-  <ion-list>
-    <ion-item [routerLink]="['/site', item.id]" button *ngFor="let item of sites">
-      {{ item.titre }}
-    </ion-item>
-  </ion-list>
+  
 </ion-header>
 
 <ion-content>
-  <img src="./assets/map.gif" />
+  <div id="mapId3" style="width: 100%; height: 100%"></div>
 </ion-content>

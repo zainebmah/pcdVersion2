@@ -1,4 +1,4 @@
-export interface Site {
+export class Site {
   id: number;
   titre: string;
   gouvernorat: string;
@@ -31,7 +31,7 @@ export class User {
   sites: Site[];
   admin?: Admin;
   }
-export interface Admin {
+export class Admin {
   id: number;
   nom: string;
   prenom: string;
@@ -39,7 +39,7 @@ export interface Admin {
   mdp: string;
   users: User[];
 }
-export interface Image {
-  imageId: number;
+export class Image {
+  id: number;
   titre: string;
 }

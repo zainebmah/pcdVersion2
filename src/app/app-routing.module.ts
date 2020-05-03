@@ -32,11 +32,11 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'gerer',
+    path: 'gerer/:2',
     loadChildren: () => import('./gerer/gerer.module').then( m => m.GererPageModule)
   },
   {
-    path: 'favoris',
+    path: 'favoris/:2',
     loadChildren: () => import('./favoris/favoris.module').then( m => m.FavorisPageModule)
   },
   {

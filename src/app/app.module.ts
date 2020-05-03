@@ -12,7 +12,8 @@ import { File } from '@ionic-native/file/ngx';
 import { Camera } from '@ionic-native/Camera/ngx';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 //import { SocialLoginModule, AuthServiceConfig, FacebookLoginProvider } from 'angularx-social-login';
-
+import { Facebook } from '@ionic-native/facebook/ngx';
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -31,6 +32,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Crop , File , Camera,
+    NativeStorage,
+    Facebook
   ],
   bootstrap: [AppComponent]
 })

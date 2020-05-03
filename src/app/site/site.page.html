@@ -17,7 +17,8 @@
     <ion-card-content>
       <div align="center">{{ siteDetail.description }}</div>
       <br>
-      <div align="center"><ion-button slot="end" fill="outline" [routerLink]="['/monuments', id ]" >Voir les monuments</ion-button></div>
+      <div align="center"><ion-button slot="end" fill="outline" [routerLink]="['/monuments', siteDetail.id ]" >Voir les monuments</ion-button></div><br>
+      <div align="center"><ion-button slot="end" fill="outline">Voir la localisation</ion-button></div>
     </ion-card-content>
   </ion-card>
   <ion-card>

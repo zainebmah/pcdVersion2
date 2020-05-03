@@ -3,26 +3,24 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Monuments favoris</ion-title>
+    <ion-title>Sites favoris</ion-title>
   </ion-toolbar>
   
 </ion-header>
 <ion-content id="produtos" [fullscreen]="true">
 <div class="scroll-horizontal">
-  <ion-card *ngFor="let i of similaires" id="doces">
-    <ion-img [src]="i.imagemUrl" style="width: 100%;height: 130px;"> </ion-img>
+  <ion-card *ngFor="let i of sites" >
+    <img src= "{{i.image}}" /> 
+    <ion-card-header>
+      <ion-card-title ><div align="center">{{ i.titre }}</div></ion-card-title><br>
+      <ion-card-subtitle><div align="center"><ion-icon name="globe" slot="start"></ion-icon> Adresse </div></ion-card-subtitle>
+    </ion-card-header>
     <ion-card-content>
-      <ion-item>
-        <h2>{{ i.nome }}</h2>
-        <p>{{ i.descricao }}</p>
-      </ion-item>
-      <ion-grid>
-        <ion-row>
-          <ion-col size="8">
-            <ion-icon name="star" color="warning" *ngFor="let c of [1,2,3,4,5]"></ion-icon>
-          </ion-col>
-          </ion-row>
-      </ion-grid>
+        <h2 align="center">{{ i.adresse}}</h2><br>
+      <div align="center"><ion-button slot="end" fill="outline" [routerLink]="['site', i.id ]" >Consulter</ion-button></div>
+      <div align="center">
+      
+    </div>
     </ion-card-content>
   </ion-card>
 </div>

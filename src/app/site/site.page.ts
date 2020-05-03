@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SitesService } from '../services/sites.service';
 import { UserService } from '../services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { User } from '../types' ;
+import { JwtHelperService } from "@auth0/angular-jwt";
 @Component({
   selector: 'app-site',
   templateUrl: './site.page.html',
@@ -27,5 +28,12 @@ export class SitePage implements OnInit {
 
   ngOnInit() {
   }
-
+  ajout() {
+        let json = JSON.stringify(this.siteDetail);
+        this.userService.addSite(json).subscribe(
+        result => {
+        console.log(result);
+        this.ajoute=true;
+      }) }
+  
 }

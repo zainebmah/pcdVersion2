@@ -18,14 +18,12 @@ export class ScanPage implements OnInit {
     maximumImagesCount: 1,
     quality: 50
   };
-  serverData: any;
-  server: JSON;
+  
   constructor(
     private camera: Camera,
     private crop: Crop,
     public actionSheetController: ActionSheetController,
-    private file: File,
-    private httpClient: HttpClient
+    private file: File
   ) { }
   ngOnInit() {
   }
@@ -50,21 +48,21 @@ export class ScanPage implements OnInit {
 
   async selectImage() {
     const actionSheet = await this.actionSheetController.create({
-      header: "Select Image source",
+      header: "Séléctionner la source de votre image",
       buttons: [{
-        text: 'Load from Library',
+        text: 'Télécharger de la galerie',
         handler: () => {
           this.pickImage(this.camera.PictureSourceType.PHOTOLIBRARY);
         }
       },
       {
-        text: 'Use Camera',
+        text: 'Utiliser la caméra',
         handler: () => {
           this.pickImage(this.camera.PictureSourceType.CAMERA);
         }
       },
       {
-        text: 'Cancel',
+        text: 'Annuler',
         role: 'cancel'
       }
       ]
@@ -119,11 +117,5 @@ export class ScanPage implements OnInit {
     });
     await actionSheet.present();
   }
-  getImages() {
-    this.serverData="1222.png"
-    this.httpClient.post<any>(API,this.serverData).subscribe(data => {
-      console.log(data);
-    })
-  }
+  
 }
-const API = 'http://127.0.0.1:5002/images';

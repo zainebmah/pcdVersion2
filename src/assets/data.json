@@ -1,0 +1,67 @@
+{
+    "properties" : [
+    {   
+        "id" : 15,
+        "city": "musée de bardo",
+        "state" : "Tunisia",
+        "long": 10.1637,
+        "lat": 36.8019
+    },
+    {
+        "id" : 1,
+        "city": "site de Dogga",
+        "state": "Tunisia",
+        "long": 9.2095,
+        "lat": 36.7181
+    },
+    {
+        "id" : 5,
+        "city": "Site d'El Jem",
+        "state": "Tunisia",
+        "long": 10.7063,
+        "lat": 35.2947
+    },
+    {
+        "id" : 4,
+        "city": "Site de carthage",
+        "long": 10.3304,
+        "lat": 36.8518
+    },
+    {
+        "id" : 9,
+        "city": "Site de sbeitla",
+        "long": 8.8343,
+        "lat": 35.1670
+    },
+    {
+        "id" : 7,
+        "city": "Site de kerkouane",
+        "long": 11.09902,
+        "lat": 36.94562
+    },
+    {
+        "id" : 10,
+        "city": "Site de bulla regia",
+        "long": 8.7407,
+        "lat": 36.5153
+    },
+    {
+        "id" : 16,
+        "city": "Musée de Sousse",
+        "long":10.6318,
+        "lat": 35.8282
+    },
+    {
+        "id" : 17,
+        "city": "Musée de sfax",
+        "long": 10.7021,
+        "lat": 34.7302
+    },
+    {
+        "id" : 13,
+        "city": "Site d'Uthina",
+        "long": 10.2018,
+        "lat": 36.5978
+    }
+    ]
+ }

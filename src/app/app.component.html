@@ -5,10 +5,34 @@
         <ion-list id="inbox-list">
          
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="selectedIndex = 1" routerDirection="root" [routerLink]="['/home']" lines="none" detail="false" [class.selected]="selectedIndex == 1">
+              <ion-icon slot="start" [ios]="'home'+'-outline'" [md]="'home'+'-sharp'"></ion-icon>
+              <ion-label>Home</ion-label>
+            </ion-item>
+            <ion-item (click)="selectedIndex = 2" routerDirection="root" [routerLink]="['/gerer', '2']" lines="none" detail="false" [class.selected]="selectedIndex == 2">
+              <ion-icon slot="start" [ios]="'build'+'-outline'" [md]="'build'+'-sharp'"></ion-icon>
+              <ion-label>Gérer votre compte</ion-label>
+            </ion-item>
+            <ion-item (click)="selectedIndex = 3" routerDirection="root" [routerLink]="['/map']" lines="none" detail="false" [class.selected]="selectedIndex == 3">
+              <ion-icon slot="start" [ios]="'map'+'-outline'" [md]="'map'+'-sharp'"></ion-icon>
+              <ion-label>Consulter les sites</ion-label>
+            </ion-item>
+            <ion-item (click)="selectedIndex = 4" routerDirection="root" [routerLink]="['/favoris', '2']" lines="none" detail="false" [class.selected]="selectedIndex == 4">
+              <ion-icon slot="start" [ios]="'heart'+'-outline'" [md]="'heart'+'-sharp'"></ion-icon>
+              <ion-label>Consulter vos sites favoris</ion-label>
+            </ion-item>
+            <ion-item (click)="selectedIndex = 5" routerDirection="root" [routerLink]="['/scan']" lines="none" detail="false" [class.selected]="selectedIndex == 5">
+              <ion-icon slot="start" [ios]="'image'+'-outline'" [md]="'image'+'-sharp'"></ion-icon>
+              <ion-label>Scanner ou importer une image</ion-label>
+            </ion-item>
+            <ion-item (click)="selectedIndex = 6" routerDirection="root" [routerLink]="['/plus-proche']" lines="none" detail="false" [class.selected]="selectedIndex == 6">
+              <ion-icon slot="start" [ios]="'compass'+'-outline'" [md]="'compass'+'-sharp'"></ion-icon>
+              <ion-label>Sites à proximité</ion-label>
+            </ion-item>
+            <ion-item (click)="selectedIndex = 7" routerDirection="root" [routerLink]="['/']" lines="none" detail="false" [class.selected]="selectedIndex == 7">
+              <ion-icon slot="start" [ios]="'compass'+'-outline'" [md]="'compass'+'-sharp'"></ion-icon>
+              <ion-label>Logout</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

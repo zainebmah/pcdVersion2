@@ -12,8 +12,8 @@
 
   <ion-content padding text-center>
  
-    <ion-button (click)="getImages()">
-      choisir votre image pour repositionner
+    <ion-button (click)="selectImage()"><font size='3'>
+      choisir votre image pour repositionner</font>
     </ion-button>
    
     <h5 *ngIf="croppedImagepath.length">image repositionné</h5>
@@ -22,9 +22,9 @@
    
     <img [src]="croppedImagepath" />
     <br><br>
-    <ion-button (click)="selectLang()">
-      choisir la langue désirée pour la description
-    </ion-button>
-    <ion-button [routerLink]="['/affiche']">Scanner</ion-button><br>
+    <div align="center"><ion-button (click)="selectLang()"><font size='3'>
+      Langue désirée pour la description</font>
+    </ion-button></div>
+    <div align="center"><ion-button [routerLink]="['/affiche']">Voir la description</ion-button></div><br>
   
 </ion-content>
